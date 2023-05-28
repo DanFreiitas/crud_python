@@ -1,0 +1,14 @@
+### Criação dos campos da tabela formulario
+
+import sqlite3 as lite
+
+con = lite.connect('dadod.db')
+
+with con:
+    cur = con.cursor()
+    cur.execute('CREATE TABLE formulario(id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, email TEXT, telefone TEXT, dia_em DATE, estado TEXT, assunto TEXT)')
+con.close()
+
+
+
+cur.execute('CREATE TABLE usuario(id INTEGER PRIMARY KEY AUTOINCREMENT, login TEXT, senha TEXT, telefone TEXT, estado TEXT, cpf TEXT, endereco TEXT)')
